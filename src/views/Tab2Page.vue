@@ -2,7 +2,7 @@
   <ion-page>
     <ion-header>
       <ion-toolbar>
-        <ion-title>Tab 2</ion-title>
+        <ion-title><Name_Partie></Name_Partie></ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content :fullscreen="true">
@@ -21,7 +21,8 @@
       <div id="list__users">
         <user-card v-for="(user, index) in users" :key="index" :name="user.name" :score="user.score"/>
       </div>
-      <ion-button color="warning" @click="resetUser">Réinitialiser</ion-button>
+      <ion-button color="warning" @click="resetUser">Stop</ion-button>
+      <ion-button color="warning" @click="resetScore">Reset</ion-button>
     </ion-content>
   </ion-page>
 </template>
@@ -30,6 +31,7 @@
 import {defineComponent, ref} from 'vue';
 import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonItem, IonLabel, IonInput, IonButton } from '@ionic/vue';
 import UserCard from "@/components/UserCard";
+import Name_Partie from "@/views/Tab1Page"
 
 export default defineComponent({
   name: 'Tab2Page',
@@ -37,6 +39,7 @@ export default defineComponent({
   setup() {
     let users = ref([])
     let name = ref('')
+    let score = ref(0)
 
     const addUser = () => {
       users.value.push({
@@ -51,7 +54,11 @@ export default defineComponent({
       users.value = []
     }
 
-    return {users, name, addUser, resetUser}
+    const resetScore = () => {
+      users.value.score = 0
+    }
+
+    return {users, name, score, addUser, resetUser, resetScore}
   }
 });
 </script>
