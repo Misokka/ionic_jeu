@@ -2,7 +2,7 @@
   <ion-page>
     <ion-header>
       <ion-toolbar>
-        <ion-title><Name_Partie></Name_Partie></ion-title>
+        <ion-title></ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content :fullscreen="true">
@@ -31,7 +31,7 @@
 import {defineComponent, ref} from 'vue';
 import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonItem, IonLabel, IonInput, IonButton } from '@ionic/vue';
 import UserCard from "@/components/UserCard";
-import Name_Partie from "@/views/Tab1Page"
+// import Name_Partie from "@/views/Tab1Page";
 
 export default defineComponent({
   name: 'Tab2Page',

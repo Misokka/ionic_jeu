@@ -1,9 +1,11 @@
 <template>
   <div id="usercard">
     <p>Nom: {{ name }}</p>
-    <ion-button color="danger" @click="decrement()">-</ion-button>
-    <p>Score: {{ score }}</p>
-    <ion-button color="primary" @click="increment()">+</ion-button>
+    <div id="round">
+      <ion-button color="danger" shape="round" @click="decrement()">-</ion-button>
+      <p>ㅤ{{ score }}ㅤ</p>
+      <ion-button color="primary" shape="round" @click="increment()">+</ion-button>
+    </div>
   </div>
 </template>
 
@@ -41,21 +43,13 @@ export default defineComponent({
 #usercard {
   border: 1px solid black;
   border-radius: 5px;
+  margin-right: 0px;
 
-  p:first-child {
-    color: red;
-  }
 }
 
-ion-button {
-  display:inline-block;
-  border: #0088FFFF 1px solid;
-  margin:2px;
-  font-size:24px;
-  cursor:pointer;
-  width:50px;
-  height:50px;
-  border-radius:100%;
+#round {
+  display: flex;
+  margin-left: 0px;
 }
 
 </style>
